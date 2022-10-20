@@ -38,25 +38,24 @@ public class Main {
     }
 
     public static String getMonth(int month) {
-        String monthTXT = new String();
-        switch (month) {
-            case 1: monthTXT = "Январь"; break;
-            case 2: monthTXT = "Февраль"; break;
-            case 3: monthTXT = "Март"; break;
-            case 4: monthTXT = "Апрель"; break;
-            case 5: monthTXT = "Май"; break;
-            case 6: monthTXT = "Июнь"; break;
-            case 7: monthTXT = "Июль"; break;
-            case 8: monthTXT = "Август"; break;
-            case 9: monthTXT = "Сентябрь"; break;
-            case 10: monthTXT = "Октябрь"; break;
-            case 11: monthTXT = "Ноябрь"; break;
-            case 12: monthTXT = "Декабрь"; break;
-        }
-        return monthTXT;
+        return switch (month) {
+            case 1 -> "Январь";
+            case 2 -> "Февраль";
+            case 3 -> "Март";
+            case 4 -> "Апрель";
+            case 5 -> "Май";
+            case 6 -> "Июнь";
+            case 7 -> "Июль";
+            case 8 -> "Август";
+            case 9 -> "Сентябрь";
+            case 10 -> "Октябрь";
+            case 11 -> "Ноябрь";
+            case 12 -> "Декабрь";
+            default -> "";
+        };
     }
 
-    public static int getIndex(int arr[], int num ) {
+    public static int getIndex(int[] arr, int num ) {
         int index = 0;
         for (int i = 0; i < arr.length; i++){
             if (num == arr[i]){
@@ -72,7 +71,7 @@ public class Main {
 
     public static String turnThePagesTurnTheStones() {
         String str1 = "HELLO";
-        String str2 = new String();
+        String str2 = "";
         for (int i = 0; i < str1.length(); i++) {
             str2 = str1.charAt(i) + str2;
         }
@@ -80,13 +79,11 @@ public class Main {
     }
 
     public static String convertDecToHex(int dec){
-        String result = new String();
-        result = Integer.toHexString(dec);
-        return result;
+        return Integer.toHexString(dec);
     }
 
     public static int[] bubbleSort(int[] array1){
-        int result[] = new int[0];
+        int[] result;
         result = array1.clone();
         for(int i = result.length - 1; i > 0; i--){
             for (int j = 0; j < i ; j++){
