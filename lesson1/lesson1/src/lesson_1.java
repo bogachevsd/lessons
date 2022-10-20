@@ -97,7 +97,6 @@ public class lesson_1 {
                 }
             }
         }
-
         return result;
     }
 }
